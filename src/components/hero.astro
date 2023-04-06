@@ -1,53 +1,44 @@
 ---
-import { Image } from "@astrojs/image/components";
-// import heroImage from "assets/hero.png";
 import heroImage from "assets/eddy.svg";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
 ---
 
 <main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block w-full">
+  class="grid lg:grid-cols-3 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="py-6 md:order-1 md:col-span-3 lg:col-span-1 hidden md:block w-full">
     <div class="w-full flex justify-center lg:justify-end pt-10 lg:pt-0">
       <img
         src={heroImage}
         alt="Eddy"
         loading="eager"
-        class="h-[510px] lg:mr-10 w-auto"
+        class="h-[510px] w-auto"
       />
     </div>
   </div>
-  <div>
+  <div class="col-span-3 lg:col-span-2">
     <h1
       class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Your friendly neighbourhood DevRel org
+      Your friendly neighbourhood <span class="text-purple-800">DevRel</span>
     </h1>
     <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly create
-      any website with this starter.
+      DeveD unites ICT enthusiasts, professionals, and students by fostering collaboration and knowledge-sharing. <wbr /> Through events, workshops, and educational resources, we empower the local IT community and inspire innovation.
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
-        href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
-        target="_blank"
+        href="/contact"
         class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
-
-        Download for Free
+      >
+        <Icon class="text-white w-5 h-5" name="ic:baseline-rocket-launch" />
+        Work with us
       </Link>
       <Link
         size="lg"
         style="outline"
-        rel="noopener"
-        href="https://github.com/surjithctly/astroship"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-        GitHub Repo
+        href="/projects"
+        class="flex gap-1 items-center justify-center">
+        <Icon class="text-black w-4 h-4" name="mdi:cog" />
+        Our projects
       </Link>
     </div>
   </div>
