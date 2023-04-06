@@ -1,7 +1,7 @@
 ---
 import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
-import { Picture } from "@astrojs/image/components";
+import { Image } from "@astrojs/image/components";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
@@ -32,14 +32,14 @@ const menuitems = [
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg flex items-center justify-center flex-col font-bold">
-          <Picture
+          <Image
             src={logo}
             alt="Deved Logo"
-            widths={[50]}
+            width={50}
+            height={50}
             aspectRatio="1:1"
             sizes="50px"
             loading="eager"
-            format="avif"
           />
           DeveD
         </a>
