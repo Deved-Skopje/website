@@ -2,12 +2,12 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import Pricing from "@components/projects.astro";
+import Projects from "@components/projects.astro";
 
-const pricing = [
+const projects = [
   {
-    name: "Personal",
-    price: "Free",
+    name: "BeerJS Skopje",
+    description: "Free",
     popular: false,
     features: [
       "Lifetime free",
@@ -23,30 +23,8 @@ const pricing = [
     },
   },
   {
-    name: "Startup",
-    price: {
-      monthly: "$19",
-      annual: "$16",
-      discount: "10%",
-      original: "$24",
-    },
-    popular: true,
-    features: [
-      "All Free Features",
-      "Up to 20 users",
-      "20 Custom domains",
-      "Unlimited Collaborators",
-      "Advanced Integrations",
-      "Priority Support",
-    ],
-    button: {
-      text: "Get Started",
-      link: "#",
-    },
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
+    name: "The CodePub Podcast",
+    description: "Custom",
     popular: false,
     features: [
       "All Pro Features",
@@ -73,8 +51,8 @@ const pricing = [
       >
     </Sectionhead>
 
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
-      {pricing.map((item) => <Pricing plan={item} />)}
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-screen-lg mt-12">
+      {projects.map((item) => <Projects project={item} />)}
     </div>
   </Container>
 </Layout>
