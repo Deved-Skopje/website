@@ -11,35 +11,53 @@ import Contactform from "@components/contactform.astro";
   <Container>
     <Sectionhead>
       <Fragment slot="title">Contact</Fragment>
-      <Fragment slot="desc">We are a here to help.</Fragment>
+      <Fragment slot="desc">Experience the DeveD Difference in Your Tech Journey</Fragment>
     </Sectionhead>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
-        <h2 class="font-medium text-2xl text-gray-800">Contact Astroship</h2>
+        <h2 class="font-medium text-2xl text-gray-800">Contact DeveD</h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Have something to say? We are here to help. Fill up the form or send
-          email or call phone.
+          Interested in partnering with DeveD to elevate your tech game? We can help.
         </p>
         <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>1734 Sanfransico, CA 93063</span>
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:hello@astroshipstarter.com"
-              >hello@astroshipstarter.com</a
-            >
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
-              href="tel:+1 (987) 4587 899">+1 (987) 4587 899</a
-            >
+          <div class="flex items-center mt-4 space-x-2 text-gray-600 text-lg">
+            <Icon class="text-gray-400 w-8 h-8" name="uil:map-marker" />
+            <span>ul. Kosta Shahov, 7-5, Skopje, 1060, Macedonia</span>
           </div>
         </div>
       </div>
       <div>
-        <Contactform />
+        <div class="flex items-center mt-4 space-x-2 text-gray-600 text-lg">
+          <Icon class="text-gray-400 w-8 h-8" name="uil:envelope" /><a
+            href="mailto:hello@deved.mk"
+            >Message us at hello@deved.mk</a
+          >
+        </div>
+        <div class="flex items-center mt-4 space-x-2 text-gray-600 text-lg">
+          <Icon class="text-gray-400 w-8 h-8" name="mdi:linkedin" />
+          <a href="/">Connect with us on LinkedIn</a>
+        </div>
+        <div class="flex items-center mt-4 space-x-2 text-gray-600 text-lg">
+          <Icon class="text-gray-400 w-8 h-8" name="mdi:twitter" />
+          <a href="/">Follow us on Twitter</a>
+        </div>
+        <div class="flex items-center mt-4 space-x-2 text-gray-600 text-lg">
+          <Icon class="text-gray-400 w-8 h-8" name="mdi:facebook" />
+          <a href="/">Follow us on Facebook</a>
+        </div>
+        <div class="flex items-center mt-4 space-x-2 text-gray-600 text-lg">
+          <Icon class="text-gray-400 w-8 h-8" name="mdi:instagram" />
+          <a href="/">Follow us on Instagram</a>
+        </div>
       </div>
     </div>
   </Container>
 </Layout>
+
+
+<style>
+  a {
+    @apply underline text-cyan-800;
+  }
+</style>
