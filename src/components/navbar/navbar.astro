@@ -6,6 +6,7 @@ import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 import logo from "assets/logo.svg";
+import { Icon } from "astro-icon";
 
 const menuitems = [
   {
@@ -66,8 +67,8 @@ const menuitems = [
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <Link href="#" size="md" style="inverted">MK</Link>
-        <Link href="#" size="md">EN</Link>
+        <!-- <Link href="#" size="md" style="inverted">MK</Link> -->
+        <Link href="/contact" size="md" class="flex gap-1 items-center justify-center"><Icon class="text-white w-5 h-5" name="ic:baseline-rocket-launch" /> Work with us!</Link>
       </div>
     </div>
   </header>
