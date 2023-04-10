@@ -7,36 +7,27 @@ import Projects from "@components/projects.astro";
 const projects = [
   {
     name: "BeerJS Skopje",
-    description: "Free",
-    popular: false,
-    features: [
-      "Lifetime free",
-      "Up to 3 users",
-      "Unlimited Pages",
-      "Astro Sub domain",
-      "Basic Integrations",
-      "Community Support",
-    ],
+    description: "Informal meetups where web development and JavaScript enthusiasts gather to share knowledge, discuss trends, and network in a relaxed atmosphere.",
+    image: '/beerjs-cover.png',
     button: {
-      text: "Get Started",
-      link: "/",
+      link: "https://beerjs.mk",
     },
   },
   {
     name: "The CodePub Podcast",
-    description: "Custom",
-    popular: false,
-    features: [
-      "All Pro Features",
-      "Unlimited Custom domains",
-      "99.99% Uptime SLA",
-      "SAML & SSO Integration",
-      "Dedicated Account Manager",
-      "24/7 Phone Support",
-    ],
+    description: "A bi-weekly podcast exploring the stories, careers, and experiences of tech professionals, offering valuable insights and connections for developers at any stage.",
+    image: '/codepub-cover.png',
     button: {
-      text: "Contact us",
+      link: "https://codepub.dev",
+    },
+  },
+  {
+    name: "Partner with DeveD!",
+    description: "Boost your team's potential and innovate together through customized workshops, dynamic events, and engaging tech content.",
+    image: '/_deved-cta-cover.png',
+    button: {
       link: "/contact",
+      text: "Work with us"
     },
   },
 ];
