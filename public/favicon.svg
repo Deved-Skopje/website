@@ -1,13 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36">
-  <path fill="#000" d="M22.25 4h-8.5a1 1 0 0 0-.96.73l-5.54 19.4a.5.5 0 0 0 .62.62l5.05-1.44a2 2 0 0 0 1.38-1.4l3.22-11.66a.5.5 0 0 1 .96 0l3.22 11.67a2 2 0 0 0 1.38 1.39l5.05 1.44a.5.5 0 0 0 .62-.62l-5.54-19.4a1 1 0 0 0-.96-.73Z"/>
-  <path fill="url(#gradient)" d="M18 28a7.63 7.63 0 0 1-5-2c-1.4 2.1-.35 4.35.6 5.55.14.17.41.07.47-.15.44-1.8 2.93-1.22 2.93.6 0 2.28.87 3.4 1.72 3.81.34.16.59-.2.49-.56-.31-1.05-.29-2.46 1.29-3.25 3-1.5 3.17-4.83 2.5-6-.67.67-2.6 2-5 2Z"/>
-  <defs>
-    <linearGradient id="gradient" x1="16" x2="16" y1="32" y2="24" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#000"/>
-      <stop offset="1" stop-color="#000" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-	<style>
-    @media (prefers-color-scheme:dark){:root{filter:invert(100%)}}
-  </style>
+<!-- Shape: Group -->
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" width="187" xmlns="http://www.w3.org/2000/svg" style="-webkit-print-color-adjust:exact" id="screenshot-915abba8-9d54-8094-8002-4fbe925e5975" version="1.1" viewBox="447 86 187 209" height="209">
+  <g id="shape-915abba8-9d54-8094-8002-4fbe925e5975" rx="0" ry="0">
+    <g id="shape-915abba8-9d54-8094-8002-4fbdfcae18c4">
+      <g class="fills" id="fills-915abba8-9d54-8094-8002-4fbdfcae18c4">
+        <path rx="0" ry="0" style="fill:#7a5997;fill-opacity:1" d="M542.000,87.000L571.000,117.000L504.000,183.000L504.000,187.000L542.000,225.000L483.000,225.000L448.000,189.000L448.000,180.000L542.000,87.000Z">
+        </path>
+      </g>
+      <g id="strokes-915abba8-9d54-8094-8002-4fbdfcae18c4" class="strokes">
+        <g class="stroke-shape">
+          <path rx="0" ry="0" style="fill:none;fill-opacity:none;stroke-width:2;stroke:#7a5997;stroke-opacity:1;stroke-dasharray:" d="M542.000,87.000L571.000,117.000L504.000,183.000L504.000,187.000L542.000,225.000L483.000,225.000L448.000,189.000L448.000,180.000L542.000,87.000Z">
+          </path>
+        </g>
+      </g>
+    </g>
+    <g id="shape-915abba8-9d54-8094-8002-4fbe4fc6dc16">
+      <g class="fills" id="fills-915abba8-9d54-8094-8002-4fbe4fc6dc16">
+        <path rx="0" ry="0" style="fill:#63ae7b;fill-opacity:1" d="M539.000,294.000L510.000,264.000L577.000,198.000L577.000,194.000L539.000,156.000L598.000,156.000L633.000,192.000L633.000,201.000L539.000,294.000Z">
+        </path>
+      </g>
+      <g id="strokes-915abba8-9d54-8094-8002-4fbe4fc6dc16" class="strokes">
+        <g class="stroke-shape">
+          <path rx="0" ry="0" style="fill:none;fill-opacity:none;stroke-width:2;stroke:#63ae7b;stroke-opacity:1;stroke-dasharray:" d="M539.000,294.000L510.000,264.000L577.000,198.000L577.000,194.000L539.000,156.000L598.000,156.000L633.000,192.000L633.000,201.000L539.000,294.000Z">
+          </path>
+        </g>
+      </g>
+    </g>
+  </g>
 </svg>
