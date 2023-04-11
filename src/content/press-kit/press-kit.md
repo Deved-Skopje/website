@@ -5,7 +5,7 @@ title: "Press Kit"
 ## Branding guidelines
 
 - Please use "DeveD", the name, the exact same way it is written - the first and last "D" should be capitalized.
-- Try using the logo / mascot / copy without modification. For any modification that are necessary, please consult with us first.
+- Try using the logo / mascot / copy without modification. For any modifications that are necessary, please consult with us first.
 
 ## Logo
 
