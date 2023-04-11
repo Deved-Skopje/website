@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+
+// Generate a new path for every collection entry
+const pressKit = await getCollection("press-kit");
+
+// Get the entry directly from the prop on render
+const { Content } = await pressKit[0].render();
+---
+
+<Layout title={pressKit[0].data.title}>
+  <Container>
+    <div class="mx-auto prose prose-lg mt-6">
+      <h1>
+        {pressKit[0].data.title}
+      </h1>
+      <Content />
+    </div>
+  </Container>
+</Layout>
