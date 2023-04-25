@@ -3,6 +3,9 @@ import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource/inter/variable.css";
+import i18next, { t } from "i18next";
+
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
 export interface Props {
   title: string;
@@ -23,7 +26,7 @@ const makeTitle = title
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={i18next.language}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -52,7 +55,14 @@ const makeTitle = title
         },
       }}
     />
-    <script defer data-domain="deved.mk" data-api="/api/event" src="/js/script.js"></script>
+    <HeadHrefLangs />
+
+    <script
+      defer
+      data-domain="deved.mk"
+      data-api="/api/event"
+      src="/js/script.js"
+    ></script>
   </head>
   <body>
     <Navbar />

@@ -1,9 +1,12 @@
 ---
+import { changeLanguage } from "i18next";
 import { getCollection } from "astro:content";
 // import { Image } from "@astrojs/image/components";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+
+changeLanguage("en");
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
@@ -20,9 +23,12 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <p class="text-lg leading-relaxed text-slate-500">
-        DeveD Skopje is a registered civil organization in the Republic of Macedonia. We are a non-profit, non-governmental, and non-political organization that aims to promote the development of the IT industry in the country.
-  <br />
-  <br />
+        DeveD Skopje is a registered civil organization in the Republic of
+        Macedonia. We are a non-profit, non-governmental, and non-political
+        organization that aims to promote the development of the IT industry in
+        the country.
+        <br />
+        <br />
         <ul class="text-lg leading-relaxed text-slate-500">
           <li>- Registration number: 7667175</li>
           <li>- Tax number: 4080023613687</li>

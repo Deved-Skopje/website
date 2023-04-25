@@ -1,33 +1,39 @@
 ---
+import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Projects from "@components/projects.astro";
 
+changeLanguage("en");
+
 const projects = [
   {
     name: "BeerJS Skopje",
-    description: "Informal meetups where web development and JavaScript enthusiasts gather to share knowledge, discuss trends, and network in a relaxed atmosphere.",
-    image: '/beerjs-cover.png',
+    description:
+      "Informal meetups where web development and JavaScript enthusiasts gather to share knowledge, discuss trends, and network in a relaxed atmosphere.",
+    image: "/beerjs-cover.png",
     button: {
       link: "https://beerjs.mk",
     },
   },
   {
     name: "The CodePub Podcast",
-    description: "A bi-weekly podcast exploring the stories, careers, and experiences of tech professionals, offering valuable insights and connections for developers at any stage.",
-    image: '/codepub-cover.png',
+    description:
+      "A bi-weekly podcast exploring the stories, careers, and experiences of tech professionals, offering valuable insights and connections for developers at any stage.",
+    image: "/codepub-cover.png",
     button: {
       link: "https://codepub.dev",
     },
   },
   {
     name: "Partner with DeveD!",
-    description: "Boost your team's potential and innovate together through customized workshops, dynamic events, and engaging tech content.",
-    image: '/_deved-cta-cover.png',
+    description:
+      "Boost your team's potential and innovate together through customized workshops, dynamic events, and engaging tech content.",
+    image: "/_deved-cta-cover.png",
     button: {
       link: "/contact",
-      text: "Work with us"
+      text: "Work with us",
     },
   },
 ];
@@ -37,9 +43,7 @@ const projects = [
   <Container>
     <Sectionhead>
       <Fragment slot="title">Projects</Fragment>
-      <Fragment slot="desc"
-        >DeveD's work: Project Highlights</Fragment
-      >
+      <Fragment slot="desc">DeveD's work: Project Highlights</Fragment>
     </Sectionhead>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-screen-lg mt-12">

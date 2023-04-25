@@ -1,24 +1,30 @@
 ---
+import { changeLanguage } from "i18next";
 import { Icon } from "astro-icon";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Button from "@components/ui/button.astro";
 import Contactform from "@components/contactform.astro";
+
+changeLanguage("en");
 ---
 
 <Layout title="Contact">
   <Container>
     <Sectionhead>
       <Fragment slot="title">Contact</Fragment>
-      <Fragment slot="desc">Experience the DeveD Difference in Your Tech Journey</Fragment>
+      <Fragment slot="desc">
+        Experience the DeveD Difference in Your Tech Journey
+      </Fragment>
     </Sectionhead>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
         <h2 class="font-medium text-2xl text-gray-800">Contact DeveD</h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Interested in partnering with DeveD to elevate your tech game? We can help.
+          Interested in partnering with DeveD to elevate your tech game? We can
+          help.
         </p>
         <div class="mt-5">
           <div class="flex items-center mt-4 space-x-2 text-gray-600 text-lg">
@@ -30,13 +36,14 @@ import Contactform from "@components/contactform.astro";
       <div>
         <div class="flex items-center mt-4 space-x-2 text-gray-600 text-lg">
           <Icon class="text-gray-400 w-8 h-8" name="uil:envelope" /><a
-            href="mailto:hello@deved.mk"
-            >Message us at hello@deved.mk</a
+            href="mailto:hello@deved.mk">Message us at hello@deved.mk</a
           >
         </div>
         <div class="flex items-center mt-4 space-x-2 text-gray-600 text-lg">
           <Icon class="text-gray-400 w-8 h-8" name="mdi:linkedin" />
-          <a href="https://www.linkedin.com/company/deved-skopje/">Connect with us on LinkedIn</a>
+          <a href="https://www.linkedin.com/company/deved-skopje/"
+            >Connect with us on LinkedIn</a
+          >
         </div>
         <div class="flex items-center mt-4 space-x-2 text-gray-600 text-lg">
           <Icon class="text-gray-400 w-8 h-8" name="mdi:twitter" />
@@ -44,17 +51,20 @@ import Contactform from "@components/contactform.astro";
         </div>
         <div class="flex items-center mt-4 space-x-2 text-gray-600 text-lg">
           <Icon class="text-gray-400 w-8 h-8" name="mdi:facebook" />
-          <a href="https://www.facebook.com/people/DeveD/100091427876607/">Follow us on Facebook</a>
+          <a href="https://www.facebook.com/people/DeveD/100091427876607/"
+            >Follow us on Facebook</a
+          >
         </div>
         <div class="flex items-center mt-4 space-x-2 text-gray-600 text-lg">
           <Icon class="text-gray-400 w-8 h-8" name="mdi:instagram" />
-          <a href="https://www.instagram.com/deved4534/">Follow us on Instagram</a>
+          <a href="https://www.instagram.com/deved4534/"
+            >Follow us on Instagram</a
+          >
         </div>
       </div>
     </div>
   </Container>
 </Layout>
-
 
 <style>
   a {

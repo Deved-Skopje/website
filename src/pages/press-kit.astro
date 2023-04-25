@@ -1,11 +1,13 @@
 ---
+import { changeLanguage } from "i18next";
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 
+changeLanguage("en");
+
 // Generate a new path for every collection entry
 const pressKit = await getCollection("press-kit");
-
 // Get the entry directly from the prop on render
 const { Content } = await pressKit[0].render();
 ---

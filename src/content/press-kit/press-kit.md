@@ -11,11 +11,9 @@ title: "Press Kit"
 
 ![logo](/logo.svg)
 
-
 <a download href="/logo.svg">[DOWNLOAD]</a>
 
 ## Mascot (Eddy)
-
 
 ![Eddy](/eddy.svg)
 
@@ -24,7 +22,7 @@ title: "Press Kit"
 ## Description
 
 DeveD is a passionate community-driven initiative focused on empowering the local IT industry by fostering collaboration, knowledge-sharing, and growth among developers, IT professionals, and enthusiasts. Our roots date back to 2017, when we began as <a href="https://beerjs.mk">BeerJS Skopje</a>, a local branch of the international BeerJS meetups, where web development and JavaScript aficionados gathered to share their insights and experiences.
-  
+
 As we evolved, our commitment to cultivating a thriving tech community has only grown stronger. Today, DeveD offers a range of events, workshops, and educational resources that cater to web development, JavaScript, and emerging technologies. By connecting individuals and companies, we aim to inspire innovation and success within the tech community.
 
 In addition to organizing our flagship <a href="https://beerjs.mk">BeerJS meetups</a>, we also manage <a href="https://codepub.dev">CodePub</a>, a bi-weekly podcast that delves into the lives and careers of tech professionals. The podcast provides a platform for developers of all experience levels to learn, grow, and connect with the wider community.
