@@ -37,6 +37,19 @@ publishedBlogEntries.sort(function (a, b) {
         {
           publishedBlogEntries.map((blogPostEntry, index) => {
             const slug = blogPostEntry.slug.split("/")[1];
+
+            let blogPostDate = blogPostEntry.data.publishDate.toDateString();
+            if (currentLang !== "en") {
+              blogPostDate = blogPostEntry.data.publishDate
+                .toLocaleDateString("mk-MK", {
+                  weekday: "short",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })
+                .replaceAll(",", "");
+            }
+
             return (
               <li>
                 <a href={localizePath(`/blog/${slug}`)}>
@@ -71,7 +84,7 @@ publishedBlogEntries.sort(function (a, b) {
                         <time
                           class="text-gray-400"
                           datetime={blogPostEntry.data.publishDate.toISOString()}>
-                          {blogPostEntry.data.publishDate.toDateString()}
+                          {blogPostDate}
                         </time>
                       </div>
                     </div>

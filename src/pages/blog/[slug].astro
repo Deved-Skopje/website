@@ -26,7 +26,14 @@ const entry = blogEntries.find(
 const { Content } = await entry.render();
 let blogPostDate = entry.data.publishDate.toDateString();
 if (currentLang !== "en") {
-  blogPostDate = entry.data.publishDate.toLocaleDateString("mk");
+  blogPostDate = entry.data.publishDate
+    .toLocaleDateString("mk-MK", {
+      weekday: "short",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+    .replaceAll(",", "");
 }
 ---
 
