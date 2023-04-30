@@ -1,5 +1,5 @@
 // 1. Import utilities from `astro:content`
-import { z, defineCollection } from 'astro:content';
+import { z, defineCollection } from "astro:content";
 
 // 2. Define your collection(s)
 const blogCollection = defineCollection({
@@ -11,8 +11,8 @@ const blogCollection = defineCollection({
       src: z.string(),
       alt: z.string(),
     }),
-    publishDate: z.string().transform(str => new Date(str)),
-    author: z.string().default('Darko Bozhinovski'),
+    publishDate: z.string().transform((str) => new Date(str)),
+    author: z.string().default("Darko Bozhinovski"),
     category: z.string(),
     tags: z.array(z.string()),
   }),
@@ -27,10 +27,9 @@ const teamCollection = defineCollection({
       src: z.string(),
       alt: z.string(),
     }),
-    publishDate: z.string().transform(str => new Date(str)),
+    publishDate: z.string().transform((str) => new Date(str)),
   }),
 });
-
 
 const pressKit = defineCollection({
   schema: z.object({
@@ -41,7 +40,7 @@ const pressKit = defineCollection({
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
-  'blog': blogCollection,
-  'team': teamCollection,
-  'press-kit': pressKit,
+  blog: blogCollection,
+  team: teamCollection,
+  "press-kit": pressKit,
 };

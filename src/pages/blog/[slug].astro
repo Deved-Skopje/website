@@ -2,19 +2,39 @@
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
+import i18next, { changeLanguage, t } from "i18next";
 
+changeLanguage("en");
+
+const currentLang = i18next?.language;
 // Generate a new path for every collection entry
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
-  return blogEntries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+  return blogEntries.map((entry) => {
+    const [lang, slug] = entry.slug.split("/");
+    return {
+      params: { slug: slug },
+      props: { blogEntries, slug },
+    };
+  });
 }
-
 // Get the entry directly from the prop on render
-const { entry } = Astro.props;
+const { blogEntries, slug } = Astro.props;
+const entry = blogEntries.find(
+  (blog) => blog.slug === currentLang + "/" + slug
+);
 const { Content } = await entry.render();
+let blogPostDate = entry.data.publishDate.toDateString();
+if (currentLang !== "en") {
+  blogPostDate = entry.data.publishDate
+    .toLocaleDateString("mk-MK", {
+      weekday: "short",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+    .replaceAll(",", "");
+}
 ---
 
 <Layout title={entry.data.title}>
@@ -35,7 +55,7 @@ const { Content } = await entry.render();
         <time
           class="text-gray-400"
           datetime={entry.data.publishDate.toISOString()}>
-          {entry.data.publishDate.toDateString()}
+          {blogPostDate}
         </time>
         <span class="text-gray-400 hidden md:block">•</span>
         <div class="w-full md:w-auto flex flex-wrap gap-3">
@@ -49,13 +69,13 @@ const { Content } = await entry.render();
     </div>
 
     <div class="mx-auto prose prose-lg mt-6">
-        <Content />
+      <Content />
     </div>
     <div class="text-center mt-8">
       <a
         href="/blog"
         class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition"
-        >← Back to Blog</a
+        >{t("blog.back.button")}</a
       >
     </div>
   </Container>

@@ -2,10 +2,11 @@
 draft: false
 title: "The story of DeveD"
 snippet: "On our humble beginnings and our journey to the most active local IT organization"
-image: {
+image:
+  {
     src: "https://lh3.googleusercontent.com/pw/AMWts8AFldZtd2POnRNuW6wl4I29gQs8VeQY7W6i_AtQUvS0uSWPmxYjck4tGXaUiCgMbtqqsW9fvh2Z7ZO3YZoxqmQT_DJNeF5JWoe-U6h6zzplnkVEYBmM-5yckBKcX1Uv96AOsatKmTyJXiYTwRW6wnnB9g=w1391-h927-s-no?authuser=0",
-    alt: "A BeerJS meetup"
-}
+    alt: "A BeerJS meetup",
+  }
 publishDate: "2023-04-10 11:39"
 category: "History"
 author: "Darko Bozhinovski"

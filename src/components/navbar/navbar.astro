@@ -1,34 +1,39 @@
 ---
 import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
-import { Image } from "@astrojs/image/components";
-import Dropdown from "./dropdown.astro";
-import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import i18next, { t } from "i18next";
 import logo from "assets/logo.svg";
 import { Icon } from "astro-icon";
 
+const supportedLanguages = i18next.languages;
+const currentLanguage = i18next.language;
+const { pathname } = Astro.url;
+
+import { localizePath } from "astro-i18next";
+
 const menuitems = [
   {
-    title: "Projects",
-    path: "/projects",
+    title: t("projects.projects"),
+    path: localizePath("/projects"),
   },
   {
-    title: "About",
-    path: "/about",
+    title: t("about.about"),
+    path: localizePath("/about"),
   },
   {
-    title: "Blog",
-    path: "/blog",
+    title: t("blog.blog"),
+    path: localizePath("/blog"),
   },
   {
-    title: "Contact",
-    path: "/contact",
+    title: t("contact.contact"),
+    path: localizePath("/contact"),
   },
   {
-    title: "Organization",
-    path: "/organization",
-  }
+    title: t("organization.organization"),
+    path: localizePath("/organization"),
+  },
 ];
 ---
 
@@ -36,9 +41,11 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg flex items-center justify-center flex-col font-bold">
+        <a
+          href="/"
+          class="text-lg flex items-center justify-center flex-col font-bold">
           <img
-            src={logo}
+            src={logo.src}
             alt="Deved Logo"
             class="w-[50px] h-[50px]"
             loading="eager"
@@ -71,8 +78,33 @@ const menuitems = [
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <!-- <Link href="#" size="md" style="inverted">MK</Link> -->
-        <Link href="/contact" size="md" class="flex gap-1 items-center justify-center"><Icon class="text-white w-5 h-5" name="ic:baseline-rocket-launch" /> Work with us!</Link>
+        {
+          supportedLanguages.map((supportedLanguage: string) => {
+            const route = localizePath(pathname, supportedLanguage);
+
+            const inverted =
+              currentLanguage !== supportedLanguage ? "" : "inverted";
+
+            return (
+              <Link
+                size="md"
+                {...(currentLanguage !== supportedLanguage
+                  ? null
+                  : { style: "inverted" })}
+                href={route}>
+                {supportedLanguage.toUpperCase()}
+              </Link>
+            );
+          })
+        }
+
+        <Link
+          href="/contact"
+          size="md"
+          class="flex gap-1 items-center justify-center">
+          <Icon class="text-white w-5 h-5" name="ic:baseline-rocket-launch" />
+          {t("navbar.work.with.us")}
+        </Link>
       </div>
     </div>
   </header>

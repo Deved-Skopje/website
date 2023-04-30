@@ -4,12 +4,20 @@ import { Picture } from "@astrojs/image/components";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import i18next, { changeLanguage, t } from "i18next";
+import { localizePath } from "astro-i18next";
 
+changeLanguage("en");
+
+const currentLang = i18next.language;
 // Filter blog entries with 'draft: false' & date before current date
-const publishedBlogEntries = await getCollection("blog", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
+const publishedBlogEntries = await getCollection("blog", ({ data, id }) => {
+  return (
+    !data.draft &&
+    data.publishDate < new Date() &&
+    id.startsWith(`${currentLang}/`)
+  );
 });
-
 // Sort content entries by publication date
 publishedBlogEntries.sort(function (a, b) {
   return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
@@ -19,56 +27,72 @@ publishedBlogEntries.sort(function (a, b) {
 <Layout title="Blog">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Our Blog</Fragment>
+      <Fragment slot="title">{t("blog.title")}</Fragment>
       <Fragment slot="desc">
-        All things DeveD, as seen from its founders.
+        {t("blog.body")}
       </Fragment>
     </Sectionhead>
     <main class="mt-16">
       <ul class="grid gap-16 max-w-4xl mx-auto">
         {
-          publishedBlogEntries.map((blogPostEntry, index) => (
-            <li>
-              <a href={`/blog/${blogPostEntry.slug}`}>
-                <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-                  <Picture
-                    src={blogPostEntry.data.image.src}
-                    alt={blogPostEntry.data.image.alt}
-                    sizes="(max-width: 800px) 100vw, 800px"
-                    widths={[200, 400, 800]}
-                    aspectRatio="16:9"
-                    background="#ffffff"
-                    fit="cover"
-                    position="center"
-                    loading={index <= 2 ? "eager" : "lazy"}
-                    decoding={index <= 2 ? "sync" : "async"}
-                    class="w-full rounded-md"
-                  />
-                  <div>
-                    <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
-                      {blogPostEntry.data.category}
-                    </span>
+          publishedBlogEntries.map((blogPostEntry, index) => {
+            const slug = blogPostEntry.slug.split("/")[1];
 
-                    <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
-                      {blogPostEntry.data.title}
-                    </h2>
+            let blogPostDate = blogPostEntry.data.publishDate.toDateString();
+            if (currentLang !== "en") {
+              blogPostDate = blogPostEntry.data.publishDate
+                .toLocaleDateString("mk-MK", {
+                  weekday: "short",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })
+                .replaceAll(",", "");
+            }
 
-                    <div class="flex gap-2 mt-3">
-                      <span class="text-gray-400">
-                        {blogPostEntry.data.author}
+            return (
+              <li>
+                <a href={localizePath(`/blog/${slug}`)}>
+                  <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
+                    <Picture
+                      src={blogPostEntry.data.image.src}
+                      alt={blogPostEntry.data.image.alt}
+                      sizes="(max-width: 800px) 100vw, 800px"
+                      widths={[200, 400, 800]}
+                      aspectRatio="16:9"
+                      background="#ffffff"
+                      fit="cover"
+                      position="center"
+                      loading={index <= 2 ? "eager" : "lazy"}
+                      decoding={index <= 2 ? "sync" : "async"}
+                      class="w-full rounded-md"
+                    />
+                    <div>
+                      <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+                        {blogPostEntry.data.category}
                       </span>
-                      <span class="text-gray-400">• </span>
-                      <time
-                        class="text-gray-400"
-                        datetime={blogPostEntry.data.publishDate.toISOString()}>
-                        {blogPostEntry.data.publishDate.toDateString()}
-                      </time>
+
+                      <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
+                        {blogPostEntry.data.title}
+                      </h2>
+
+                      <div class="flex gap-2 mt-3">
+                        <span class="text-gray-400">
+                          {blogPostEntry.data.author}
+                        </span>
+                        <span class="text-gray-400">• </span>
+                        <time
+                          class="text-gray-400"
+                          datetime={blogPostEntry.data.publishDate.toISOString()}>
+                          {blogPostDate}
+                        </time>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </a>
-            </li>
-          ))
+                </a>
+              </li>
+            );
+          })
         }
       </ul>
     </main>

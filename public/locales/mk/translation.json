@@ -1,0 +1,23 @@
+{
+  "navbar": {
+    "work.with.us": "Работи со нас!"
+  },
+  "blog": {
+    "blog": "Блог",
+    "title": "Нашиот Блог",
+    "body": "Се за DeveD, низ очите на нашите основачи.",
+    "back.button": "← Назад кон Блог"
+  },
+  "projects": {
+    "projects": "Проекти"
+  },
+  "about": {
+    "about": "За"
+  },
+  "contact": {
+    "contact": "Контакт"
+  },
+  "organization": {
+    "organization": "Организација"
+  }
+}

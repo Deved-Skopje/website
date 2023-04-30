@@ -1,0 +1,23 @@
+{
+  "navbar": {
+    "work.with.us": "Work with us!"
+  },
+  "blog": {
+    "blog": "Blog",
+    "title": "Our Blog",
+    "body": "All things DeveD, as seen from its founders.",
+    "back.button": "← Back to Blog"
+  },
+  "projects": {
+    "projects": "Projects"
+  },
+  "about": {
+    "about": "About"
+  },
+  "contact": {
+    "contact": "Contact"
+  },
+  "organization": {
+    "organization": "Organization"
+  }
+}

@@ -1,9 +1,12 @@
 ---
+import { changeLanguage } from "i18next";
 import { getCollection } from "astro:content";
 // import { Image } from "@astrojs/image/components";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+
+changeLanguage("en");
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
@@ -23,24 +26,47 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
         Empowering the IT Community, Together
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        DeveD is a passionate community-driven initiative focused on empowering the local IT industry by fostering collaboration, knowledge-sharing, and growth among developers, IT professionals, and enthusiasts. Our roots date back to 2017, when we began as <a href="https://beerjs.mk">BeerJS Skopje</a>, a local branch of the international BeerJS meetups, where web development and JavaScript aficionados gathered to share their insights and experiences.
-  <br />
-  <br />
-As we evolved, our commitment to cultivating a thriving tech community has only grown stronger. Today, DeveD offers a range of events, workshops, and educational resources that cater to web development, JavaScript, and emerging technologies. By connecting individuals and companies, we aim to inspire innovation and success within the tech community.
-<br />
-  <br />
-In addition to organizing our flagship <a href="https://beerjs.mk">BeerJS meetups</a>, we also manage <a href="https://codepub.dev">CodePub</a>, a bi-weekly podcast that delves into the lives and careers of tech professionals. The podcast provides a platform for developers of all experience levels to learn, grow, and connect with the wider community.
-<br />
-  <br />
-Our vision is to create a high-quality, open, and collaborative local IT industry where teamwork and a sense of community are valued above all else. At DeveD, we put our platform and expertise to work for IT companies, professionals, students, and enthusiasts, ensuring a responsible and dedicated approach in all our endeavors.
-<br />
-  <br />
-Whether you're a seasoned professional or just starting your journey in the world of technology, DeveD is here to support you every step of the way. Join our vibrant community and let's shape the future of IT together!
+        DeveD is a passionate community-driven initiative focused on empowering
+        the local IT industry by fostering collaboration, knowledge-sharing, and
+        growth among developers, IT professionals, and enthusiasts. Our roots
+        date back to 2017, when we began as <a href="https://beerjs.mk"
+          >BeerJS Skopje</a
+        >, a local branch of the international BeerJS meetups, where web
+        development and JavaScript aficionados gathered to share their insights
+        and experiences.
+        <br />
+        <br />
+        As we evolved, our commitment to cultivating a thriving tech community has
+        only grown stronger. Today, DeveD offers a range of events, workshops, and
+        educational resources that cater to web development, JavaScript, and emerging
+        technologies. By connecting individuals and companies, we aim to inspire
+        innovation and success within the tech community.
+        <br />
+        <br />
+        In addition to organizing our flagship <a href="https://beerjs.mk"
+          >BeerJS meetups</a
+        >, we also manage <a href="https://codepub.dev">CodePub</a>, a bi-weekly
+        podcast that delves into the lives and careers of tech professionals.
+        The podcast provides a platform for developers of all experience levels
+        to learn, grow, and connect with the wider community.
+        <br />
+        <br />
+        Our vision is to create a high-quality, open, and collaborative local IT
+        industry where teamwork and a sense of community are valued above all else.
+        At DeveD, we put our platform and expertise to work for IT companies, professionals,
+        students, and enthusiasts, ensuring a responsible and dedicated approach
+        in all our endeavors.
+        <br />
+        <br />
+        Whether you're a seasoned professional or just starting your journey in the
+        world of technology, DeveD is here to support you every step of the way.
+        Join our vibrant community and let's shape the future of IT together!
       </p>
     </div>
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h1 class="font-bold text-3xl text-gray-800 text-center mb-10">The amazing team behind DeveD</h1>
-
+      <h1 class="font-bold text-3xl text-gray-800 text-center mb-10">
+        The amazing team behind DeveD
+      </h1>
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {
@@ -55,9 +81,7 @@ Whether you're a seasoned professional or just starting your journey in the worl
             </div>
 
             <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">
-                {teamMemberEntry.data.name}
-              </h2>
+              <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
               <h3 class="text-sm text-slate-500">
                 {teamMemberEntry.data.title}
               </h3>
