@@ -1,14 +1,15 @@
 ---
 import heroImage from "assets/eddy.svg";
 import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
+import { Image } from 'astro:assets';
 ---
 
 <main
   class="grid lg:grid-cols-3 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
   <div class="py-6 md:order-1 md:col-span-3 lg:col-span-1 hidden md:block w-full">
     <div class="w-full flex justify-center lg:justify-end pt-10 lg:pt-0">
-      <img
+      <Image
         src={heroImage}
         alt="Eddy"
         loading="eager"
