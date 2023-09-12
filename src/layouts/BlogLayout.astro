@@ -1,11 +1,46 @@
 ---
+import { AstroSeo } from "@astrolib/seo";
 import Container from "@components/container.astro";
 import { getFormattedDate } from "@utils/all";
-import { log } from "astro/dist/core/logger/core";
 import Layout from "./Layout.astro";
 
 const { frontmatter } = Astro.props;
 ---
+
+<AstroSeo
+  title={frontmatter.title}
+  description={frontmatter.description}
+  canonical={frontmatter.canonical || Astro.url.toString()}
+  twitter={{
+    handle: "@DeveD_Skopje",
+    site: "https://deved.mk",
+    cardType: "summary_large_image",
+  }}
+  openGraph={{
+    url: Astro.url.toString() || 'https://deved.mk',
+    title: frontmatter.title,
+    description: frontmatter?.description,
+    images: [
+      {
+        url: new URL(Astro.url.pathname + "og.png", Astro.site).toString(),
+        width: 1200,
+        height: 630,
+        alt: "Social open graph",
+        type: "image/jpeg",
+      },
+      {
+        url: new URL(Astro.url.pathname + "og.png", Astro.site).toString(),
+        width: 4096,
+        height: 4096,
+        alt: "Twitter open graph",
+        type: "image/jpeg",
+      },
+      { url: new URL(Astro.url.pathname + "og.png", Astro.site).toString() },
+      { url: new URL(Astro.url.pathname + "og.png", Astro.site).toString() },
+    ],
+    site_name: "DeveD",
+  }}
+/>
 
 <Layout title={frontmatter.title}>
   <Container>

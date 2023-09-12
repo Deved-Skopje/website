@@ -2,13 +2,56 @@
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
+import { AstroSeo } from "@astrolib/seo";
 
 // Generate a new path for every collection entry
 const pressKit = await getCollection("press-kit");
 
 // Get the entry directly from the prop on render
 const { Content } = await pressKit[0].render();
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site
+).toString();
 ---
+
+<AstroSeo
+      title={"DeveD | Press Kit"}
+      description="DeveD | Your friendly neighborhood DevRel."
+      canonical={canonicalURL}
+      twitter={{
+        handle: "@DeveD_Skopje",
+        site: "https://deved.mk",
+        cardType: "summary_large_image",
+      }}
+      openGraph={{
+        url: Astro.url.toString() || 'https://deved.mk',
+        title: "DeveD | Press Kit",
+        description: "DeveD | Your friendly neighborhood DevRel.",
+        images: [
+          {
+            url: resolvedImageWithDomain,
+            width: 1200,
+            height: 630,
+            alt: "Social open graph",
+            type: "image/jpeg",
+          },
+          {
+            url: resolvedImageWithDomain,
+            width: 4096,
+            height: 4096,
+            alt: "Twitter open graph",
+            type: "image/jpeg",
+          },
+          { url: resolvedImageWithDomain },
+          { url: resolvedImageWithDomain },
+        ],
+        site_name: "DeveD",
+      }}
+    
+    />
 
 <Layout title={pressKit[0].data.title}>
   <Container>

@@ -1,25 +1,27 @@
 ---
-import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource/inter";
 
 export interface Props {
   title: string;
+  frontmatter?: any;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+// const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
-  Astro.site
-).toString();
+// const resolvedImageWithDomain = new URL(
+//   "/opengraph.jpg",
+//   Astro.site
+// ).toString();
+// 
+// const { title, frontmatter } = Astro.props;
 
-const { title } = Astro.props;
+// console.log('frontmatter', frontmatter);
 
-const makeTitle = title
-  ? title + " | " + "DeveD"
-  : "DeveD - Your friendly neighborhood DevRel.";
+// const makeTitle = title
+//   ? title + " | " + "DeveD"
+//   : "DeveD - Your friendly neighborhood DevRel.";
 ---
 
 <!DOCTYPE html>
@@ -31,27 +33,6 @@ const makeTitle = title
     <meta name="generator" content={Astro.generator} />
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
-    <SEO
-      title={makeTitle}
-      description="DeveD | Your friendly neighborhood DevRel."
-      canonical={canonicalURL}
-      twitter={{
-        creator: "@d_bozhinovski",
-        site: "https://darko.io",
-        card: "summary_large_image",
-      }}
-      openGraph={{
-        basic: {
-          url: canonicalURL,
-          type: "website",
-          title: `DeveD | Your friendly neighborhood DevRel.`,
-          image: resolvedImageWithDomain,
-        },
-        image: {
-          alt: "DeveD Homepage Screenshot",
-        },
-      }}
-    />
     <script defer data-domain="deved.mk" data-api="/api/event" src="/js/script.js"></script>
   </head>
   <body>
