@@ -7,7 +7,7 @@ image: {
     alt: "A BeerJS meetup"
 }
 publishDate: "2023-04-10 11:39"
-category: "History"
+category: "Events"
 author: "Darko Bozhinovski"
 tags: [beginnings, devrel, events, beerjs]
 ---
