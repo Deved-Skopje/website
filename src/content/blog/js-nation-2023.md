@@ -3,7 +3,7 @@ draft: false
 title: "JSNation 2023: A Developer's Day Out in Amsterdam"
 snippet: "On our humble beginnings and our journey to the most active local IT organization"
 image: {
-    src: "/PXL_20230531_110505555.jpg",
+    src: "/jsnation-mosaic.jpg",
     alt: "A BeerJS meetup"
 }
 publishDate: "2023-04-10 11:39"
