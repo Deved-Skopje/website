@@ -6,7 +6,7 @@ image: {
     src: "/jsnation-mosaic.jpg",
     alt: "A BeerJS meetup"
 }
-publishDate: "2023-04-10 11:39"
+publishDate: "2023-09-07 11:39"
 category: "Events"
 author: "Darko Bozhinovski"
 tags: [beginnings, devrel, events, beerjs]
